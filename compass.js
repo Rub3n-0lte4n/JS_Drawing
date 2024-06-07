@@ -91,3 +91,17 @@ drawCompass(checkDarkMode());
 
 // Change Colors
 window.matchMedia('(prefers-color-scheme: dark)').addListener(e => drawCompass(e.matches));
+
+// Hehe, Shady
+hoverCount = 0;
+document.getElementById("no-no-no").addEventListener('mouseover', function() {
+    hoverCount++;
+    if (hoverCount === 1) {
+        alert("Don't you even think copy me!");
+    } else if (hoverCount === 2) {
+        alert("Last Warning!");
+    } else if (hoverCount === 3) {
+        alert("You've Been Warned ...");
+        document.body.innerHTML = '';
+    }
+});
