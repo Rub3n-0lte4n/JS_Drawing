@@ -1,25 +1,19 @@
+canvas {
+    display: block;
+    margin: auto;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     overflow: hidden;
-    transition: background-color 0.5s ease; /* transition effect */
-}
-
-canvas {
-    flex: 1;
-    display: block;
-    margin: auto;
-    width: 100%;
-    height: auto;
+    transition: background-color 0.5s ease; /* Dark/Light Mode Transition */
 }
 
 footer {
     text-align: center;
     padding: 10px;
     background-color: #f0f0f0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
