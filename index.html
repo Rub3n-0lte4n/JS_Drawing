@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compass</title>
-    <style>
-        canvas {
-            display: block;
-            margin: auto;
-        }
-        body {
-            margin: 0;
-            overflow: hidden;
-            transition: background-color 0.5s ease; /* Smooth transition effect */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="compass" width="600" height="600"></canvas>
+    <footer>
+        <p>Compass made by Ruben. All rights reserved. © 2024-Forever</p>
+    </footer>
+    <script src="compass.js"></script>
+    <script>
+    canvas.addEventListener('click', function() {
+        hoverCount++;
+        if (hoverCount === 1) {
+            alert("Don't you even think copy me!");
+        } else if (hoverCount === 2) {
+            alert("Last Warning!");
+        } else if (hoverCount === 3) {
+            alert("Ok, bye!");
+        }
+    });
+    </script>
 </body>
 </html>
