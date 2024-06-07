@@ -71,18 +71,14 @@ function drawCompass(isDarkMode) {
     }, 200); // Animation Time
 }
 
-// Function to check if dark mode is enabled
 function checkDarkMode() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-// Initial draw based on system's color scheme
 drawCompass(checkDarkMode());
 
-// Listen for changes in color scheme
 window.matchMedia('(prefers-color-scheme: dark)').addListener(e => drawCompass(e.matches));
 
-// Check if Dark Mode is enabled
 function checkDarkMode() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
