@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+    <footer>
+        Made by Raul &copy; 2024-Forever. All rights reserved.
+    </footer>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const colors = ['red', 'green', 'blue', 'yellow'];
+        const numSquares = 20;
+        const size = 100;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const angleIncrement = (2 * Math.PI) / numSquares; // Full circle divided by number of squares
+        let angle = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < numSquares; i++) {
+                ctx.strokeStyle = colors[i % colors.length];
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(angle + i * angleIncrement);
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(size, 0);
+                ctx.lineTo(size, size);
+                ctx.lineTo(0, size);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.restore();
+            }
+            angle += 1900; // Adjust the speed of rotation here
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>
