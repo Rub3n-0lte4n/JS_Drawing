@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotated Squares Pattern</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const numberOfSquares = 36; // Adjust the number of squares as needed
+        const squareSize = 200; // Adjust the size of the squares as needed
+
+        for (let i = 0; i < numberOfSquares; i++) {
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.rotate((i * Math.PI) / numberOfSquares);
+            ctx.beginPath();
+            ctx.rect(-squareSize / 2, -squareSize / 2, squareSize, squareSize);
+            ctx.stroke();
+            ctx.restore();
+        }
+    </script>
+</body>
+</html>
